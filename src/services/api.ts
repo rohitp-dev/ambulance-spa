@@ -16,8 +16,8 @@ export const createOrUpdateRecord = async (
   type: "ambulance" | "doctor",
   data: RecordType
 ): Promise<RecordType> => {
-  const method = data.id ? "PUT" : "POST";
-  const response = await fetch(`${API_URL}/${type}`, {
+  const method =   "POST";
+  const response = await fetch(`http://localhost:5000/api/records`, {
     method,
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
