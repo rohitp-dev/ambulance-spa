@@ -53,14 +53,13 @@ const Dashboard: React.FC = () => {
     e.preventDefault();
     try {
       await createOrUpdateRecord("ambulance", formData);
-      fetchData(); // Refresh the data after submission
-      handleCloseModal(); // Close modal and clear form
+      fetchData(); 
+      handleCloseModal(); 
     } catch (err) {
       console.error("Error submitting form:", err);
     }
   };
 
-  // Reset form data and close the modal
   const handleCloseModal = () => {
     setModalOpen(false);
     setFormData({
@@ -69,7 +68,7 @@ const Dashboard: React.FC = () => {
       description: "",
       location: "",
       image: "",
-    }); // Reset the form data
+    }); 
   };
 
   useEffect(() => {
@@ -150,7 +149,7 @@ const Dashboard: React.FC = () => {
           <div className="flex justify-end">
             <button
               type="button"
-              onClick={handleCloseModal} // Close modal and clear form
+              onClick={handleCloseModal}
               className="mr-2 px-4 py-2 bg-gray-500 text-white rounded"
             >
               Cancel
@@ -192,7 +191,7 @@ const Dashboard: React.FC = () => {
                   className="mr-2 px-2 py-1 bg-green-500 text-white rounded"
                   onClick={() => {
                     setModalOpen(true);
-                    setFormData(record); // Pre-fill form with record data for editing
+                    setFormData(record); 
                   }}
                 >
                   Edit
